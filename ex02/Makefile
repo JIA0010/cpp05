@@ -1,5 +1,5 @@
 NAME = a.out
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
