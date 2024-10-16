@@ -5,10 +5,10 @@ int main()
 {
     // テストケース 1: 正常な署名
     try {
-        Bureaucrat alice("Alice", 20);
+        Bureaucrat asan("Asan", 20);
         Form contract("Contract", 25, 30);
 
-        alice.signForm(contract);
+        asan.signForm(contract);
         std::cout << contract << std::endl;
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -16,10 +16,10 @@ int main()
 
     // テストケース 2: 署名グレードが高すぎる
     try {
-        Bureaucrat charlie("Charlie", 1);
+        Bureaucrat bsan("Bsan", 1);
         Form topSecret("TopSecret", 0, 10); // Invalid grade
 
-        charlie.signForm(topSecret);
+        bsan.signForm(topSecret);
         std::cout << topSecret << std::endl;
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -27,10 +27,10 @@ int main()
 
     // テストケース 3: 署名グレードが低すぎる
     try {
-        Bureaucrat dave("Dave", 100);
+        Bureaucrat csan("Csan", 100);
         Form report("Report", 50, 50);
 
-        dave.signForm(report);
+        csan.signForm(report);
         std::cout << report << std::endl;
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -38,11 +38,11 @@ int main()
 
     // テストケース 4: フォームのコピーコンストラクタ
     try {
-        Bureaucrat eve("Eve", 50);
+        Bureaucrat dsan("Dsan", 50);
         Form application("Application", 45, 45);
         
         Form copyApplication(application);
-        eve.signForm(copyApplication);
+        dsan.signForm(copyApplication);
         std::cout << copyApplication << std::endl;
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -50,11 +50,11 @@ int main()
 
     // テストケース 5: 署名済みのフォームを再度署名
     try {
-        Bureaucrat frank("Frank", 40);
+        Bureaucrat esan("Esan", 40);
         Form memo("Memo", 45, 45);
 
-        frank.signForm(memo);
-        frank.signForm(memo); // Attempt to sign again
+        esan.signForm(memo);
+        esan.signForm(memo); // 再度署名を試みる
         std::cout << memo << std::endl;
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -62,10 +62,10 @@ int main()
 
     // テストケース 6: 例外のキャッチ
     try {
-        Bureaucrat grace("Grace", 5);
+        Bureaucrat fsan("Fsan", 5);
         Form secretDoc("SecretDoc", 2, 2);
 
-        grace.signForm(secretDoc);
+        fsan.signForm(secretDoc);
         std::cout << secretDoc << std::endl;
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
