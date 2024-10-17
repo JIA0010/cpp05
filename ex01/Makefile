@@ -3,11 +3,12 @@ SRCS = main.cpp Bureaucrat.cpp Form.cpp
 OBJS = $(SRCS:.cpp=.o)
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
+LDFLAGS = -lefence
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -19,3 +20,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+valgrind: $(NAME)
+	valgrind --leak-check=full ./$(NAME)
