@@ -5,6 +5,7 @@
 #include <fstream>
 #include "AForm.hpp"
 
+
 class PresidentialPardonForm : public AForm
 {
     private:
@@ -16,7 +17,7 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm(PresidentialPardonForm const &presidentialPardonForm);
         PresidentialPardonForm &operator=(PresidentialPardonForm const &presidentialPardonForm);
         ~PresidentialPardonForm();
-        // void execute(Bureaucrat const &executor) const;
+        std::string getTarget(void) const;
 };
 
 std::ostream &operator<<(std::ostream &out, PresidentialPardonForm const &form);

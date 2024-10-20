@@ -12,6 +12,8 @@ void    PresidentialPardonForm::executeConcrete() const
     std::cout << _target << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }
 
+std::string PresidentialPardonForm::getTarget(void) const { return _target; }
+
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &presidentialPardonForm)
 {
     if (this != &presidentialPardonForm) {

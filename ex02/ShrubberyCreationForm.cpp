@@ -19,6 +19,8 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+std::string ShrubberyCreationForm::getTarget(void) const { return _target; }
+
 const char *ShrubberyCreationForm::FileOpenException::what() const throw()
 {
     return "Grade is too high";

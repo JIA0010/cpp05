@@ -19,15 +19,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-// void RobotomyRequestForm::execute(Bureaucrat const &executor) const
-// {
-//     AForm::execute(executor);
-//     std::cout << "*drilling noises* ";
-//     if (rand() % 2)
-//         std::cout << _target << " has been robotomized successfully" << std::endl;
-//     else
-//         std::cout << _target << " robotomization failed" << std::endl;
-// }
+std::string RobotomyRequestForm::getTarget(void) const { return _target; }
 
 void	RobotomyRequestForm::executeConcrete() const
 {
