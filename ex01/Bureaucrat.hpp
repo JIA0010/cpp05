@@ -5,6 +5,11 @@
 #include <string>
 #include "Form.hpp"
 
+#define DEFAULT_NAME "default"
+#define DEFAULT_GRADE 150
+#define HIGHEST_POSSIBLE_GRADE 1
+#define LOWEST_POSSIBLE_GRADE 150
+
 class Bureaucrat
 {
     private:

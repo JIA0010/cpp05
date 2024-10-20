@@ -22,3 +22,8 @@ re: fclean all
 
 valgrind: $(NAME)
 	valgrind --leak-check=full ./$(NAME)
+
+test:
+	@ make test -C test/
+
+.PHONY: all clean fclean re valgrind test
