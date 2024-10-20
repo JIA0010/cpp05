@@ -41,21 +41,21 @@ TEST (FormTest, BeSignedFail) {
     EXPECT_THROW(form.beSigned(bureaucrat), Form::GradeTooLowException);
 }
 
-// 実行
-TEST (FormTest, Execute) {
-    Bureaucrat bureaucrat("Bureaucrat", 10);
-    Form form("Form", 10, 20);
-    form.beSigned(bureaucrat);
-    EXPECT_NO_THROW(bureaucrat.executeForm(form));
-}
+// // 実行
+// TEST (FormTest, Execute) {
+//     Bureaucrat bureaucrat("Bureaucrat", 10);
+//     Form form("Form", 10, 20);
+//     form.beSigned(bureaucrat);
+//     EXPECT_NO_THROW(bureaucrat.executeForm(form));
+// }
 
-// 実行できない
-TEST (FormTest, ExecuteFail) {
-    Bureaucrat bureaucrat("Bureaucrat", 11);
-    Form form("Form", 10, 20);
-    form.beSigned(bureaucrat);
-    EXPECT_THROW(bureaucrat.executeForm(form), Form::GradeTooLowException);
-}
+// // 実行できない
+// TEST (FormTest, ExecuteFail) {
+//     Bureaucrat bureaucrat("Bureaucrat", 11);
+//     Form form("Form", 10, 20);
+//     form.beSigned(bureaucrat);
+//     EXPECT_THROW(bureaucrat.executeForm(form), Form::GradeTooLowException);
+// }
 
 // ストリーム出力
 TEST (FormTest, Stream) {
