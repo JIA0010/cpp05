@@ -19,7 +19,6 @@ AForm &AForm::operator=(AForm const &Aform)
 {
     if (this != &Aform) {
         _signed = Aform._signed;
-        // _name, _gradeToSign, and _gradeToExecute are const, so they are not assignable
     }
     return *this;
 }

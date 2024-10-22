@@ -19,21 +19,12 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+std::string ShrubberyCreationForm::getTarget() const { return _target; }
+
 const char *ShrubberyCreationForm::FileOpenException::what() const throw()
 {
     return "Grade is too high";
 }
-
-// void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
-// {
-//     AForm::execute(executor);
-//     std::string filename = _target + "_shrubbery";
-//     std::ofstream file(filename.c_str());
-//     if (!file.is_open())
-//         throw ShrubberyCreationForm::FileOpenException();
-//     file << TREE;
-//     file.close();
-// }
 
 void	ShrubberyCreationForm::executeConcrete() const
 {

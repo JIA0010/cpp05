@@ -23,6 +23,8 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
+std::string PresidentialPardonForm::getTarget() const { return _target; }
+
 std::ostream& operator<<(std::ostream &out, PresidentialPardonForm const &form)
 {
     out << form.getName() << ", form sign grade " << form.getGradeToSign() << ", form exec grade " << form.getGradeToExecute() << ", form is ";
