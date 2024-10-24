@@ -1,9 +1,7 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {}
-
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
-{
+//セッターを加える。今の状態だと各項目ごとにテストケースで確認するのが面倒
+void Bureaucrat::SetGradeSafely(int grade) {
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
@@ -11,11 +9,19 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
     _grade = grade;
 }
 
+
+Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {}
+
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
+{
+    SetGradeSafely(grade);
+}
+
 Bureaucrat::Bureaucrat(Bureaucrat const &bureaucrat) : _name(bureaucrat._name), _grade(bureaucrat._grade) {}
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &bureaucrat)
 {
-    _grade = bureaucrat._grade;
+    SetGradeSafely(bureaucrat._grade);
     return *this;
 }
 
@@ -27,16 +33,12 @@ int Bureaucrat::getGrade() const { return _grade; }
 
 void Bureaucrat::incrementGrade()
 {
-    if (_grade <= 1)
-        throw Bureaucrat::GradeTooHighException();
-    _grade--;
+    SetGradeSafely(_grade - 1);
 }
 
 void Bureaucrat::decrementGrade()
 {
-    if (_grade >= 150)
-        throw Bureaucrat::GradeTooLowException();
-    _grade++;
+    SetGradeSafely(_grade + 1);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

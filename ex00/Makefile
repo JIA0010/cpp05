@@ -17,6 +17,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	@ make fclean -C test/
 
 re: fclean all
 
